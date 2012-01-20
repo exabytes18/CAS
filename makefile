@@ -7,3 +7,6 @@ all: cas
 cas: cas.c
 	$(CC) $(OPTS) $(LIBS) cas.c -o cas
 
+clean:
+	-rm -rf cas
+
