@@ -62,8 +62,8 @@ void run_test(int num_threads, long long num_iterations) {
 	time_t elapsed_time_us = end.tv_usec - start.tv_usec;
 	elapsed_time_us += 1000000l * (end.tv_sec - start.tv_sec);
 	printf("time = %.3fms\n", elapsed_time_us / 1e3);
-	printf("cas_succ = %lld\n", cas_succ);
-	printf("cas_fail = %lld\n", cas_fail);
+	printf("cas_succ = %lld (%.3f/s)\n", cas_succ, (cas_succ / (elapsed_time_us / 1e6)));
+	printf("cas_fail = %lld (%.3f/s)\n", cas_fail, (cas_fail / (elapsed_time_us / 1e6)));
 }
 
 
