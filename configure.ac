@@ -14,6 +14,7 @@ AM_INIT_AUTOMAKE
 
 # Checks for programs.
 AC_PROG_CC
+AC_PROG_CC_C99
 
 # Checks for pthreads.
 AX_PTHREAD([], [echo "pthreads not configured properly" && exit 1])
