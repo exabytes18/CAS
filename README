@@ -1,0 +1,4 @@
+If you want to create the ./configure script on OSX:
+	brew install autoconf
+	brew install automake
+	./bootstrap
