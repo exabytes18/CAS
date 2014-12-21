@@ -2,3 +2,79 @@ If you want to create the ./configure script on OSX:
 	brew install autoconf
 	brew install automake
 	./bootstrap
+
+
+Results:
+
+OSX - Yosemite 10.10.1
+MacBook Pro (Retina, Mid 2012)
+2.6 GHz Intel Core i7 (i7-3720QM)
+16 GB 1600 MHz DDR3
+
+geneva:CAS exabytes18$ ./src/cas 1 100000000
+time = 632.669ms
+cas_succ = 100000000 (158060534.023/s)
+cas_fail = 0 (0.000/s)
+geneva:CAS exabytes18$ ./src/cas 2 100000000
+time = 3991.516ms
+cas_succ = 100000000 (25053137.705/s)
+cas_fail = 94900016 (23775431.691/s)
+geneva:CAS exabytes18$ ./src/cas 4 100000000
+time = 7663.034ms
+cas_succ = 100000000 (13049661.531/s)
+cas_fail = 217629056 (28399855.201/s)
+geneva:CAS exabytes18$ ./src/cas 8 100000000
+time = 13863.722ms
+cas_succ = 100000000 (7213070.199/s)
+cas_fail = 467242779 (33702549.647/s)
+geneva:CAS exabytes18$ ./src/cas 16 100000000
+time = 10055.375ms
+cas_succ = 100000000 (9944929.950/s)
+cas_fail = 375583495 (37351515.483/s)
+geneva:CAS exabytes18$ ./src/cas 32 100000000
+time = 15483.022ms
+cas_succ = 100000000 (6458687.458/s)
+cas_fail = 537286373 (34701647.585/s)
+
+
+
+Amazon Linux AMI 2014.09.1 (HVM) - ami-b66ed3de
+Intel Xeon E5-2680 v2 (2.8GHz)
+
+[root@ip-10-178-203-183 CAS]# ./src/cas 1 100000000
+time = 710.899ms
+cas_succ = 100000000 (140666958.316/s)
+cas_fail = 0 (0.000/s)
+[root@ip-10-178-203-183 CAS]# ./src/cas 2 100000000
+time = 1280.608ms
+cas_succ = 100000000 (78087908.244/s)
+cas_fail = 9785802 (7641528.087/s)
+[root@ip-10-178-203-183 CAS]# ./src/cas 4 100000000
+time = 2130.688ms
+cas_succ = 100000000 (46933197.164/s)
+cas_fail = 25763055 (12091425.399/s)
+[root@ip-10-178-203-183 CAS]# ./src/cas 8 100000000
+time = 2454.257ms
+cas_succ = 100000000 (40745529.095/s)
+cas_fail = 38650518 (15748358.057/s)
+[root@ip-10-178-203-183 CAS]# ./src/cas 16 100000000
+time = 2332.929ms
+cas_succ = 100000000 (42864570.675/s)
+cas_fail = 38314450 (16423324.499/s)
+[root@ip-10-178-203-183 CAS]# ./src/cas 32 100000000
+time = 3784.318ms
+cas_succ = 100000000 (26424840.619/s)
+cas_fail = 173500760 (45847299.302/s)
+
+[root@ip-10-178-203-183 CAS]# numactl --hardware
+available: 2 nodes (0-1)
+node 0 cpus: 0 1 2 3 4 5 6 7 16 17 18 19 20 21 22 23
+node 0 size: 30162 MB
+node 0 free: 29683 MB
+node 1 cpus: 8 9 10 11 12 13 14 15 24 25 26 27 28 29 30 31
+node 1 size: 30235 MB
+node 1 free: 29535 MB
+node distances:
+node   0   1 
+  0:  10  20 
+  1:  20  10 
