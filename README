@@ -40,6 +40,7 @@ cas_fail = 537286373 (34701647.585/s)
 
 Amazon Linux AMI 2014.09.1 (HVM) - ami-b66ed3de
 Intel Xeon E5-2680 v2 (2.8GHz)
+c3.8xlarge
 
 [root@ip-10-178-203-183 CAS]# ./src/cas 1 100000000
 time = 710.899ms
